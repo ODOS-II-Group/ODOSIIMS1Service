@@ -1,0 +1,11 @@
+version: '2'
+services:
+    odosiims1service-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/ODOSIIMS1Service/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=ODOSIIMS1Service
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
