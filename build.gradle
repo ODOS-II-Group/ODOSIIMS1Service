@@ -2,12 +2,12 @@ import org.gradle.internal.os.OperatingSystem
 
 buildscript {
     repositories {
-        maven { url "https://nexus.lassiterdynamics.com:8081/repository/jcenter/" }
-      
-        maven { url "https://nexus.lassiterdynamics.com:8081/repository/spring-plugins-release/" }
-        
-        maven { url "https://nexus.lassiterdynamics.com:8081/repository/gradle-plugins/" }
-        
+        maven { url "http://nexus.lassiterdynamics.com:8081/repository/jcenter/" }
+
+        maven { url "http://nexus.lassiterdynamics.com:8081/repository/spring-plugins-release/" }
+
+        maven { url "http://nexus.lassiterdynamics.com:8081/repository/gradle-plugins/" }
+
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}"
@@ -31,7 +31,7 @@ apply plugin: 'java'
 sourceCompatibility=1.8
 targetCompatibility=1.8
 // Until JHipster supports JDK 9
-assert System.properties['java.specification.version'] == '1.8'
+assert System.properties['java.specification.version'] >= '1.8'
 
 apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
@@ -157,8 +157,8 @@ configurations {
 }
 
 repositories {
- 	maven { url "https://nexus.lassiterdynamics.com:8081/repository/jcenter/" }
- 
+ 	maven { url "http://nexus.lassiterdynamics.com:8081/repository/jcenter/" }
+
 }
 
 dependencies {
@@ -226,9 +226,9 @@ dependencies {
     compile "io.springfox:springfox-bean-validators"
     compile "org.postgresql:postgresql"
     compile "org.mapstruct:mapstruct-jdk8:${mapstruct_version}"
-    
+
     compile "net.sf.dozer:dozer:5.5.1"
-    
+
     testCompile "com.jayway.jsonpath:json-path"
     testCompile "info.cukes:cucumber-junit"
     testCompile "info.cukes:cucumber-spring"
