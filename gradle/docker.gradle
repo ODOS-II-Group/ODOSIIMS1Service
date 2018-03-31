@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        jcenter()
+          maven { url "https://nexus.lassiterdynamics.com:8081/repository/jcenter/" }
     }
 
     dependencies {

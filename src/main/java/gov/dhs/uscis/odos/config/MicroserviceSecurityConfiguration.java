@@ -45,27 +45,29 @@ public class MicroserviceSecurityConfiguration extends WebSecurityConfigurerAdap
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-            .csrf()
-            .disable()
-            .exceptionHandling()
-            .authenticationEntryPoint(problemSupport)
-            .accessDeniedHandler(problemSupport)
-        .and()
-            .headers()
-            .frameOptions()
-            .disable()
-        .and()
-            .sessionManagement()
-            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        .and()
-            .authorizeRequests()
-            .antMatchers("/api/**").authenticated()
-            .antMatchers("/management/health").permitAll()
-            .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
-            .antMatchers("/swagger-resources/configuration/ui").permitAll()
-        .and()
-            .apply(securityConfigurerAdapter());
+    	http.csrf().disable();
+    	http.authorizeRequests().antMatchers("/").permitAll();
+//        http
+//            .csrf()
+//            .disable()
+//            .exceptionHandling()
+//            .authenticationEntryPoint(problemSupport)
+//            .accessDeniedHandler(problemSupport)
+//        .and()
+//            .headers()
+//            .frameOptions()
+//            .disable()
+//        .and()
+//            .sessionManagement()
+//            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//        .and()
+//            .authorizeRequests()
+//            .antMatchers("/api/**").authenticated()
+//            .antMatchers("/management/health").permitAll()
+//            .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
+//            .antMatchers("/swagger-resources/configuration/ui").permitAll()
+//        .and()
+//            .apply(securityConfigurerAdapter());
     }
 
     private JWTConfigurer securityConfigurerAdapter() {

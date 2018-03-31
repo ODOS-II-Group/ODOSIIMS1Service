@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "locationId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "costRate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "availability",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180329021839",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "location",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "ODOSIIMS1Service",
+    "searchEngine": false
+}
