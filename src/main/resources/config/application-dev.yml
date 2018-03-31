@@ -39,14 +39,18 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/postgres
-        username: postgres
-        password: admin
+        url: jdbc:postgresql://${ODOS_DATABASE_HOST:localhost}:${ODOS_DATABASE_PORT:5432}/${ODOS_DATABASE_NAME:odos_ms1}?stringtype=unspecified
+        username: ${ODOS_DATABASE_USERNAME:odos}
+        password: ${ODOS_DATABASE_PASSWORD:odos}
+        tomcat:
+          validation-query: SELECT 1
+        driverClassName: org.postgresql.Driver
     jpa:
         database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
         show-sql: true
         properties:
+            hibernate.default_schema: ${ODOS_DATBASE_SCHEMA:odos_ms1}
             hibernate.id.new_generator_mappings: true
             hibernate.cache.use_second_level_cache: true
             hibernate.cache.use_query_cache: false

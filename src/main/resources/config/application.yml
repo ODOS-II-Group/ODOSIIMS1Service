@@ -65,27 +65,18 @@ management:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
 spring:
     application:
-        name: odosms1
+        name: ODOSIIMS1Service
     jackson:
         serialization.write_dates_as_timestamps: false
     jpa:
-      database: POSTGRESQL
-      show-sql: false
-      hibernate:
-        ddl-auto: update
-      properties:
-         hibernate:   
-            #dialect: org.hibernate.dialect.PostgreSQL94Dialect
+        open-in-view: false
+        hibernate:
             default_schema: ${ODOS_DATBASE_SCHEMA:odos_ms1}
-    datasource:
-      platform: postgres
-      url: jdbc:postgresql://${ODOS_DATABASE_HOST:localhost}:${ODOS_DATABASE_PORT:5432}/${ODOS_DATABASE_NAME:odos_ms1}?stringtype=unspecified
-      username: ${ODOS_DATABASE_USERNAME:postres}
-      password: ${ODOS_DATABASE_PASSWORD:admin}
-      tomcat:
-        validation-query: SELECT 1
-      driverClassName: org.postgresql.Driver
-      
+            dialect: org.hibernate.dialect.PostgreSQL94Dialect
+            ddl-auto: create
+            naming:
+                physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+                implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
     messages:
         basename: i18n/messages
     mvc:

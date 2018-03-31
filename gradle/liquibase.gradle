@@ -40,8 +40,8 @@ task update(dependsOn: configurations.liquibase, type: JavaExec) {
 
         args "--changeLogFile=config/liquibase/changelog/update" + buildTimestamp() +"_changelog.xml"
         args "--referenceUrl=hibernate:spring:gov.dhs.uscis.odos.domain?dialect=org.hibernate.dialect.PostgreSQL82Dialect&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
-        args "--username=postgres"
-        args "--password=admin"
+        args "--username=odos"
+        args "--password=odos"
         args "--url=jdbc:postgresql://localhost:5432/odos_ms1"
         args "--driver=org.postgresql.Driver"
         args "diffChangeLog"
