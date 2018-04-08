@@ -142,3 +142,7 @@ jhipster:
 # ===================================================================
 
 application:
+  activemq:
+    broker-url: ${AMQ_URL:tcp://localhost:61616}
+  queue:
+    request: ODOS.USCIS.ServiceRequest.v1.q
