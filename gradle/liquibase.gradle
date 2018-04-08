@@ -6,8 +6,9 @@ configurations {
 
 dependencies {
     liquibase "org.liquibase.ext:liquibase-hibernate5:${liquibase_hibernate5_version}"
+    
 }
-
+apply plugin: "org.flywaydb.flyway"
 if (OperatingSystem.current().isWindows()) {
     task pathingLiquibaseJar(type: Jar) {
         dependsOn configurations.liquibase
@@ -48,9 +49,16 @@ task update(dependsOn: configurations.liquibase, type: JavaExec) {
 	
 }
 
-
 def buildTimestamp() {
     def date = new Date()
     def formattedDate = date.format('yyyyMMddHHmmss')
     return formattedDate
 }
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/odos_ms1'
+    user = 'odos'
+    password = 'odos'
+    schemas = ['odos_ms1']
+}
+

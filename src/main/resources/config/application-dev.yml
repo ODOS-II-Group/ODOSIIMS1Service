@@ -39,7 +39,7 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://${ODOS_DATABASE_HOST:localhost}:${ODOS_DATABASE_PORT:5432}/${ODOS_DATABASE_NAME:odos_ms1}?stringtype=unspecified
+        url: jdbc:postgresql://${ODOS_DATABASE_HOST:localhost}:${ODOS_DATABASE_PORT:5454}/${ODOS_DATABASE_NAME:odos_ms1}?stringtype=unspecified
         username: ${ODOS_DATABASE_USERNAME:odos}
         password: ${ODOS_DATABASE_PASSWORD:odos}
         tomcat:
