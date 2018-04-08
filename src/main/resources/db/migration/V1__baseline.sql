@@ -1,0 +1,3 @@
+BEGIN;
+CREATE DATABASE odos_ms1 OWNER odos ENCODING = 'UTF8';
+commit;
