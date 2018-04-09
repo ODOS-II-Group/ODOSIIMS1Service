@@ -13,7 +13,7 @@ import org.springframework.jms.core.JmsTemplate;
 @EnableJms
 public class JMSConfiguration {
 
-	@Value("${activemq.broker-url}")
+	@Value("${spring.activemq.broker-url}")
 	private String brokerUrl;
 
 	@Bean

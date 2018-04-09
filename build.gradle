@@ -234,11 +234,9 @@ dependencies {
        
     compile "org.springframework:spring-jms:5.0.5.RELEASE"
     compile "javax.jms:javax.jms-api:2.0.1"
+    compile "org.apache.activemq:activemq-spring:5.10.0"
     
-    compile "org.apache.activemq:activemq-all:5.15.3"
-    
-    
-
+   
     testCompile "com.jayway.jsonpath:json-path"
     testCompile "info.cukes:cucumber-junit"
     testCompile "info.cukes:cucumber-spring"

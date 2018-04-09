@@ -11,10 +11,10 @@ public class ServiceRequestListener {
 	
 	private final Logger log = LoggerFactory.getLogger(ServiceRequestListener.class);
 	
-	@JmsListener(destination = "${activemq.queue.request}")
+	@JmsListener(destination = "${queue.request}")
 	public void handleRequest(String message) {
 		
-		log.info("message received" + message);
+		log.info("message received " + message);
 		
 	}
 
